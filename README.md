@@ -40,3 +40,11 @@ If you have additional pattern images or improvements, feel free to open a pull 
 ## License
 
 Specify the license for this repository here. (Replace this line with the actual license, e.g., MIT, if applicable.)
+
+## Contributing
+
+If you have additional pattern images or improvements, feel free to open a pull request or issue.
+
+## License
+
+Specify the license for this repository here. (Replace this line with the actual license, e.g., MIT, if applicable.)
