@@ -11,6 +11,9 @@ on:
 jobs:
   svg-to-png:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -24,7 +27,6 @@ jobs:
 
       - name: Convert SVGs to PNGs
         run: |
-          mkdir -p images
           for svg in images/*.svg; do
             [ -f "$svg" ] || continue
             png="${svg%.svg}.png"
