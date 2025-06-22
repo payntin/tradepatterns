@@ -1,0 +1,41 @@
+name: Convert SVGs to PNGs
+
+on:
+  push:
+    paths:
+      - 'images/**/*.svg'
+      - '.github/workflows/svg-to-png.yml'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  svg-to-png:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install cairosvg
+        run: pip install cairosvg
+
+      - name: Convert SVGs to PNGs
+        run: |
+          mkdir -p images
+          for svg in images/*.svg; do
+            [ -f "$svg" ] || continue
+            png="${svg%.svg}.png"
+            cairosvg "$svg" -o "$png" -w 800
+            echo "Converted $svg -> $png"
+          done
+
+      - name: Commit and push PNGs
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add images/*.png
+          git commit -m "Auto-generate PNGs from SVGs [skip ci]" || echo "No changes to commit"
+          git push
