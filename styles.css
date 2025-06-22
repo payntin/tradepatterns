@@ -58,6 +58,16 @@ footer {
     height: 80px;
     margin-bottom: 0.5rem;
 }
+/* NEW: Make images outside pattern cards display at natural or large size */
+.markdown-body img,
+.readme img,
+main img:not(.pattern-card img) {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 2rem auto;
+}
 .bullish-label {
     display: inline-block;
     background: #29c159;
