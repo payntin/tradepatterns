@@ -1,0 +1,6 @@
+<svg width="80" height="80" viewBox="0 0 80 80">
+  <!-- Horizontal bottom -->
+  <line x1="20" y1="55" x2="60" y2="55" stroke="#12326b" stroke-width="3"/>
+  <!-- Falling resistance -->
+  <line x1="20" y1="25" x2="60" y2="55" stroke="#e23d3d" stroke-width="3"/>
+</svg>

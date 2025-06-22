@@ -1,0 +1,6 @@
+<svg width="80" height="80" viewBox="0 0 80 80">
+  <!-- Horizontal top -->
+  <line x1="20" y1="25" x2="60" y2="25" stroke="#12326b" stroke-width="3"/>
+  <!-- Rising support -->
+  <line x1="20" y1="55" x2="60" y2="25" stroke="#29c159" stroke-width="3"/>
+</svg>
